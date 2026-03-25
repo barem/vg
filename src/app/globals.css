@@ -68,6 +68,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .amazon-header-main {
@@ -627,6 +630,46 @@ img {
     padding-top: 14px;
   }
 
+  .product-layout {
+    gap: 14px;
+  }
+
+  .hero-media {
+    order: 1;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: static;
+    width: calc(100% + 20px);
+  }
+
+  .hero-image-shell {
+    padding: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .hero-image-shell img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    min-height: 320px;
+  }
+
+  .product-copy {
+    order: 2;
+  }
+
+  .thumb-rail {
+    order: 3;
+  }
+
+  .buy-box {
+    order: 4;
+  }
+
   .product-breadcrumbs {
     font-size: 0.8rem;
     line-height: 1.45;
@@ -648,10 +691,6 @@ img {
 
   .price-whole {
     font-size: 1.9rem;
-  }
-
-  .hero-image-shell {
-    padding: 10px;
   }
 
   .about-card,
