@@ -558,10 +558,7 @@ img {
   }
 
   .thumb-rail {
-    order: 2;
-    grid-template-columns: repeat(6, 72px);
-    overflow-x: auto;
-    padding-bottom: 4px;
+    display: none;
   }
 
   .stats-band {
@@ -655,19 +652,17 @@ img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    min-height: 320px;
+    min-height: 360px;
   }
 
   .product-copy {
     order: 2;
-  }
-
-  .thumb-rail {
-    order: 3;
+    gap: 14px;
+    padding-top: 6px;
   }
 
   .buy-box {
-    order: 4;
+    order: 3;
   }
 
   .product-breadcrumbs {
@@ -675,22 +670,20 @@ img {
     line-height: 1.45;
   }
 
-  .product-copy {
-    gap: 12px;
-  }
-
   .product-copy h1 {
-    font-size: 1.45rem;
-    line-height: 1.28;
+    font-size: 1.9rem;
+    line-height: 1.16;
+    letter-spacing: -0.02em;
   }
 
   .rating-row {
     flex-wrap: wrap;
     row-gap: 4px;
+    font-size: 0.9rem;
   }
 
   .price-whole {
-    font-size: 1.9rem;
+    font-size: 2.4rem;
   }
 
   .about-card,
@@ -702,18 +695,6 @@ img {
   .closing-cta,
   .stats-band {
     padding: 18px;
-  }
-
-  .thumb-rail {
-    display: flex;
-    gap: 8px;
-    grid-template-columns: none;
-    margin-top: -6px;
-    padding-bottom: 2px;
-  }
-
-  .thumb-card {
-    width: 64px;
   }
 
   .promo-strip,
@@ -729,8 +710,31 @@ img {
   .amazon-buy,
   .amazon-cart,
   .closing-buy {
-    min-height: 44px;
-    font-size: 0.95rem;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+
+  .buy-box {
+    margin-top: 2px;
+  }
+
+  .buy-price {
+    font-size: 2rem;
+  }
+
+  .buy-meta {
+    gap: 10px;
+  }
+
+  .stats-band div {
+    padding: 2px 0;
+  }
+
+  .section-heading h2,
+  .panel h2,
+  .closing-cta h2 {
+    font-size: 1.75rem;
+    line-height: 1.15;
   }
 
   .gallery-grid,
