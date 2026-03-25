@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const productTitle =
   "Easter Care Package for Kids - Prefilled Complete with Toys & Candy, Pre-made Basket Fillers";
@@ -7,9 +10,6 @@ const productPrice = "$48.95";
 
 const ctaUrl =
   "https://victoriagraces.com/products/easter-care-package-for-kids-prefilled-complete-with-toys-candy-pre-made-basket-fillers";
-
-const heroImage =
-  "https://cdn.shopify.com/s/files/1/0698/4001/1554/files/2024_Easter_Main_Image_with_Blue_bunny.jpg?v=1773248464";
 
 const galleryImages = [
   {
@@ -128,6 +128,9 @@ const faqs = [
 ];
 
 export default function Home() {
+  const [selectedImage, setSelectedImage] = useState(galleryImages[0]);
+  const previewImages = galleryImages.slice(0, 6);
+
   return (
     <main className="sales-page">
       <header className="amazon-header">
@@ -157,23 +160,34 @@ export default function Home() {
         </div>
 
         <div className="product-layout">
-          <aside className="thumb-rail" aria-label="Product thumbnails">
-            {galleryImages.slice(0, 6).map((image) => (
-              <div className="thumb-card" key={image.src}>
-                <Image src={image.src} alt={image.alt} width={72} height={72} />
-              </div>
-            ))}
-          </aside>
-
           <div className="hero-media">
             <div className="hero-image-shell">
               <Image
-                src={heroImage}
-                alt="VictoriaGraces Easter care package main image"
+                src={selectedImage.src}
+                alt={selectedImage.alt}
                 width={760}
                 height={760}
                 priority
               />
+            </div>
+
+            <div className="thumb-rail" aria-label="Product image thumbnails">
+              {previewImages.map((image) => {
+                const isActive = image.src === selectedImage.src;
+
+                return (
+                  <button
+                    key={image.src}
+                    type="button"
+                    className={`thumb-card ${isActive ? "thumb-card-active" : ""}`}
+                    onClick={() => setSelectedImage(image)}
+                    aria-label={`Show ${image.alt}`}
+                    aria-pressed={isActive}
+                  >
+                    <Image src={image.src} alt={image.alt} width={72} height={72} />
+                  </button>
+                );
+              })}
             </div>
           </div>
 
