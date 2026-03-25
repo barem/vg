@@ -201,9 +201,10 @@ img {
 
 .hero-image-shell img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  min-height: 420px;
+  min-height: 0;
+  max-height: 60svh;
 }
 
 .product-copy {
@@ -699,7 +700,8 @@ img {
   }
 
   .hero-image-shell img {
-    min-height: 360px;
+    aspect-ratio: 4 / 5;
+    max-height: 52svh;
   }
 
   .product-copy {
